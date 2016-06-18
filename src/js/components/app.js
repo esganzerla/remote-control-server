@@ -13,12 +13,16 @@ function app() {
   let active = navStore.getActive();
 
   let panels = {
-    mousepad: <Mousepad throttle="10" />,
+    mousepad: <Mousepad throttle="50" />,
     arrows: <Arrows />,
     log: <Log />
   };
 
   let panel = panels[active] || <div className="blank" />;
+
+  return (<div className="app">
+    {panel}
+  </div>);
 
   return (<div className="app">
     <Navbar />
